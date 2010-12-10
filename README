@@ -29,7 +29,8 @@ Installation Instructions
     exists.
     
 2:  Copy the .htaccess file distributed with the plugin into your base Wordpress
-    directory.
+    directory.  If you already have an .htaccess file in your base Wordpress directory, 
+    append the contents of the distributed .htaccess file to the exisitng one.
     
 3:  Log into the admin section of your Wordpress site, typically at 
     http://[yoururl]/wp-admin
