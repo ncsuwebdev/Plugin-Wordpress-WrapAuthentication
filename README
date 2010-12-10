@@ -1,3 +1,7 @@
+This is a plugin for Wordpress 3.0+ to allow for authentication to North Carolina
+State University's WRAP authentication mechanism.
+
+
 ----------
 Created By
 ----------
@@ -8,20 +12,21 @@ http://ot.ncsu.edu
 @ncsu_oit_ot
 
 
------------
-Description
------------
-
-This is a plugin for Wordpress 3.0+ to allow for authentication to North Carolina
-State University's WRAP authentication mechanism.
-
-
 -------------------------
 Installation Instructions
 -------------------------
 
-1:  Extract folder "ncsuwrap" into your Wordpress plugin directory, typically
-    located in /wp-content/plugins
+1:  Download the package from the github page located at:
+    http://github.com/jfaustin/NCSU-Wordpress-WRAP-Plugin
+    
+2:  Extract folder "ncsuwrap" into your Wordpress plugin directory, typically
+    located in /wp-content/plugins.  If your Wordpress installation allows plugins
+    to be installed via a zip file, you can do that as well by clicking on
+    "Plugins" -> "Add New" -> "Upload" and upload the zip file.  NOTE:  This
+    only works if you download the pre-packaged zip file from github.  If you
+    download the source directly, uploading that zip file will not work correctly.
+    Essentially, you need to ensure that the /wp-content/plugins/ncsuwrap directory
+    exists.
     
 2:  Copy the .htaccess file distributed with the plugin into your base Wordpress
     directory.
@@ -41,14 +46,14 @@ Installation Instructions
     not be able to administrate your wordpress instance.
     
 7:  The plugin gives you the ability to create users in Wordpress (if they don't
-    already exist) when the log in with WRAP.  By default this is turned off,
+    already exist) when they log in with WRAP.  By default this is turned off,
     but you can change this option by going under the "Settings" link and then
     clicking on "WRAP Authentication".
     
 8:  At this point, you should be ready to go.  My suggestion is to log in to your
-    Wordpress admin account from another browser to test to make sure you get
-    redirected to WRAP and that your account matching your Unity ID can log in
-    successfully.
+    new Wordpress unity-id-matching account from another browser to test to make 
+    sure you get redirected to WRAP and that your account matching your Unity ID 
+    can log in successfully.
     
     
 ----------
