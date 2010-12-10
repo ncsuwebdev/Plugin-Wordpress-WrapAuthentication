@@ -1,0 +1,62 @@
+----------
+Created By
+----------
+Plugin provided by NC State Univeristy Office of Information Technology
+
+Outreach Technology
+http://ot.ncsu.edu
+@ncsu_oit_ot
+
+
+-----------
+Description
+-----------
+
+This is a plugin for Wordpress 3.0+ to allow for authentication to North Carolina
+State University's WRAP authentication mechanism.
+
+
+-------------------------
+Installation Instructions
+-------------------------
+
+1:  Extract folder "ncsuwrap" into your Wordpress plugin directory, typically
+    located in /wp-content/plugins
+    
+2:  Copy the .htaccess file distributed with the plugin into your base Wordpress
+    directory.
+    
+3:  Log into the admin section of your Wordpress site, typically at 
+    http://[yoururl]/wp-admin
+    
+4:  Click on "Plugins."
+
+5:  You should have a plugin called "WRAP Authentication" in your plugin list.  
+    Click the "Activate" link under it.
+    
+6:  If the username you logged into Wordpress with does not match your Unity ID,
+    you should create yourself a user that matches and grant it admin permissions.
+    You can do that by clicking the "Users" link and then the "Add New" link.  Be
+    sure to give the user the role of "Administrator" otherwise your account will
+    not be able to administrate your wordpress instance.
+    
+7:  The plugin gives you the ability to create users in Wordpress (if they don't
+    already exist) when the log in with WRAP.  By default this is turned off,
+    but you can change this option by going under the "Settings" link and then
+    clicking on "WRAP Authentication".
+    
+8:  At this point, you should be ready to go.  My suggestion is to log in to your
+    Wordpress admin account from another browser to test to make sure you get
+    redirected to WRAP and that your account matching your Unity ID can log in
+    successfully.
+    
+    
+----------
+References
+----------
+
+This plugin is based off of the HTTP Authentication plugin provided by Daniel 
+Westermann-Clark (http://dev.webadmin.ufl.edu/~dwc/).
+
+Information on NC State's WRAP Authentication
+http://www.ncsu.edu/wrap/
