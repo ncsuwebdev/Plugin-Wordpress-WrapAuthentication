@@ -4,11 +4,11 @@ Credit goes to Daniel Westermann-Clark (http://dev.webadmin.ufl.edu/~dwc/) for
 writing the initial plugin that this plugin was based off of. 
 
 Plugin Name: WRAP Authentication
-Version: 2.0
-Plugin URI: http://ot.ncsu.edu
+Version: 1.0
+Plugin URI: http://webapps.ncsu.edu
 Description: Authenticate users using WRAP authentication.
 Author: Outreach Technology
-Author URI: http://ot.ncsu.edu
+Author URI: http://webapps.ncsu.edu
 */
 require_once(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'options-page.php');
 
@@ -38,7 +38,6 @@ class WRAPAuthenticationPlugin {
 	function initialize_options() {
 		$options = array(
 			'auto_create_user'         => false,
-		    'auto_create_email_domain' => 'ncsu.edu'
 		);
 
 		// Copy old options
@@ -138,7 +137,12 @@ class WRAPAuthenticationPlugin {
         if ($username == '') {
             $username = getenv('REDIRECT_WRAP_USERID');
         }
-        
+        /*
+        echo "<pre>";
+        print_r($_ENV);
+        echo $username;
+        die();
+        */
         if ($username == '') {
             setrawcookie('WRAP_REFERER', $this->_getUrl(), 0, '/', '.ncsu.edu');
             header('location:https://webauth.ncsu.edu/wrap-bin/was16.cgi');
@@ -165,12 +169,12 @@ class WRAPAuthenticationPlugin {
 	 */
 	function _create_user($username) {
 		$password = wp_generate_password();
-		$email_domain = $this->get_plugin_option('auto_create_email_domain');
+		$email = $username . '@ncsu.edu';
 
 		require_once(WPINC . DIRECTORY_SEPARATOR . 'registration.php');
-		$user_id = wp_create_user($username, $password, $username . ($email_domain ? '@' . $email_domain : ''));
+		$user_id = wp_create_user($username, $password, $email);
 		$user = get_user_by('id', $user_id);
-
+		
 		return $user;
 	}
 	
