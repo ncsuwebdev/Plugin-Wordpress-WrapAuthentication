@@ -16,29 +16,34 @@ http://ot.ncsu.edu
 Installation Instructions
 -------------------------
 
-1:  Download the package from the github page located at:
-    http://github.com/jfaustin/NCSU-Wordpress-WRAP-Plugin
+1:  Download the latest release (not actual project code) from the github page
+    located at:
+    http://github.com/ncsuwebdev/Plugin-Wordpress-WrapAuthenitcation
     
-2:  Extract folder "ncsuwrap" into your Wordpress plugin directory, typically
-    located in /wp-content/plugins.  If your Wordpress installation allows plugins
-    to be installed via a zip file, you can do that as well by clicking on
-    "Plugins" -> "Add New" -> "Upload" and upload the zip file.  NOTE:  This
-    only works if you download the pre-packaged zip file from github.  If you
-    download the source directly, uploading that zip file will not work correctly.
-    Essentially, you need to ensure that the /wp-content/plugins/ncsuwrap directory
-    exists.
+2:  Extract folder "ncstate-wrap-authentication" into your Wordpress plugin
+    directory, typically located in /wp-content/plugins.  If your Wordpress
+    installation allows plugins to be installed via a zip file, you can do that
+    as well by clicking on "Plugins" -> "Add New" -> "Upload" and upload the
+    zip file."
+
+    NOTE:  This only works if you download the pre-packaged zip file from
+    github.  If you download the source directly, uploading that zip file will
+    not work correctly.  Essentially, you need to ensure that the
+    /wp-content/plugins/ncstate-wrap-authentication directory exists and put the
+    contents of the download in the folder.
     
-2:  Copy the .htaccess file distributed with the plugin into your base Wordpress
-    directory.  If you already have an .htaccess file in your base Wordpress directory, 
-    append the contents of the distributed .htaccess file to the exisitng one.
+2:  Copy the _files/.htaccess file distributed with the plugin into your base
+    Wordpress directory.  If you already have an .htaccess file in your base
+    Wordpress directory, append the contents of the distributed .htaccess file
+    to the exisitng one.
     
 3:  Log into the admin section of your Wordpress site, typically at 
     http://[yoururl]/wp-admin
     
 4:  Click on "Plugins."
 
-5:  You should have a plugin called "WRAP Authentication" in your plugin list.  
-    Click the "Activate" link under it.
+5:  You should have a plugin called "NC State WRAP Authentication" in your
+    plugin list.  Click the "Activate" link under it.
     
 6:  If the username you logged into Wordpress with does not match your Unity ID,
     you should create yourself a user that matches and grant it admin permissions.
@@ -60,9 +65,6 @@ Installation Instructions
 ----------
 References
 ----------
-
-This plugin is based off of the HTTP Authentication plugin provided by Daniel 
-Westermann-Clark (http://dev.webadmin.ufl.edu/~dwc/).
 
 Information on NC State's WRAP Authentication
 http://www.ncsu.edu/wrap/

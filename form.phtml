@@ -1,0 +1,43 @@
+<div class="wrap">
+    <h2><?php _e('NC State WRAP Authentication', 'ncstate-wrap-authentication'); ?></h2>
+    <p>
+        WRAP Authentication is available to use to protect your Wordpress
+        installs, requiring NC State specific authentication to access the
+        administrative sections of your install.
+    </p>
+    <p>
+        For more information, visit 
+        <a href="http://www.ncsu.edu/wrap" target="_blank">http://www.ncsu.edu/wrap</a>.
+    </p>
+    </div>
+
+    <form method="post" action="admin-post.php">
+    <?php wp_nonce_field('ncstate-wrap-authentication'); ?>
+
+    <table class="form-table">
+        <tr valign="top">
+            <td width="150">
+                <label for="nwa_autoCreateUser"><?php _e('Auto-Create New Users?', 'ncstate-wrap-authentication'); ?></label>
+            </td>
+            <td>
+                <select id="nwa_autoCreateUser" name="nwa_autoCreateUser">
+                    <option value="1" <?php selected((int)$this->_options['autoCreateUser'], 1); ?>><?php _e('Yes', 'ncstate-wrap-authentication'); ?></option>
+                    <option value="0" <?php selected((int)$this->_options['autoCreateUser'], 0); ?>><?php _e('No', 'ncstate-wrap-authentication'); ?></option>
+                </select><br />
+                * Setting this option to "Yes" will cause Wordpress to create an
+                account for new users when they log into the system for the first
+                time.  Created users will obtain the role defined under
+                &quot;New User Default Role&quot; on the
+                <a href="options-general.php">General Options</a> page.
+            </td>
+        </tr>
+    </table>
+
+
+    <p class="submit">
+        <input type="hidden" name="action" value="ncstate-wrap-authentication" />
+        <input type="submit" name="Submit" value="<?php _e('Save Changes') ?>" />
+    </p>
+
+    </form>
+</div>
