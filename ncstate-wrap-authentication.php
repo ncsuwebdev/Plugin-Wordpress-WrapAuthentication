@@ -40,9 +40,10 @@ class NcstateWrapAuthentication
         add_filter('login_url', array($this, 'bypassReauth'));
         add_filter('show_password_fields', array($this, 'disable'));
         add_filter('allow_password_reset', array($this, 'disable'));
-        add_action('wp_logout', array($this, 'logout'));
 
         // Register WP hooks
+        add_action('check_passwords', array($this, 'generatePassword'), 10, 3);
+        add_action('wp_logout', array($this, 'logout'));
         add_action('admin_menu', array($this, 'addAdminMenu'));
         add_action('admin_post_ncstate-wrap-authentication', array($this, 'formSubmit'));
     }
@@ -112,6 +113,16 @@ class NcstateWrapAuthentication
         return false;
     }
 
+	/**
+	 * Generate a password for the user. This plugin does not require the
+	 * administrator to enter this value, but we need to set it so that user
+	 * creation and editing works.
+	 */
+	public function generatePassword($username, $password1, $password2)
+	{
+		$password1 = $password2 = wp_generate_password();
+	}
+
     /**
      * Logout the user by removing their WRAP cookies
      *
@@ -140,7 +151,7 @@ class NcstateWrapAuthentication
      *
      * @return WPUser object
      */
-    public function authenticate()
+    public function wrapAuthenticate()
     {
         $username = (getenv('WRAP_USERID') == '') ? getenv('REDIRECT_WRAP_USERID') : getenv('WRAP_USERID');
 
@@ -214,7 +225,7 @@ if (!function_exists('wp_authenticate')) {
     function wp_authenticate($username, $password) {
         global $ncstateWrapAuthentication;
 
-        $user = $ncstateWrapAuthentication->authenticate();
+        $user = $ncstateWrapAuthentication->wrapAuthenticate();
         if (!is_wp_error($user)) {
             $user = new WP_User($user->ID);
         }

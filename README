@@ -68,3 +68,13 @@ References
 
 Information on NC State's WRAP Authentication
 http://www.ncsu.edu/wrap/
+
+
+-----------------
+Known Limitations
+-----------------
+
+This plugin requires a valid NC State Username/Password.
+
+This plugin, when enabled, will deny access via XML-RPC.  This means that
+editing from external sources such as native iOS devices will not work.
