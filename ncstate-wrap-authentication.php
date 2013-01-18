@@ -1,7 +1,7 @@
 <?php
 /***************************************************************************
  * Plugin Name: NC State WRAP Authentication
- * Version: 2.0.0
+ * Version: 2.0.1
  * Plugin URI: http://ot.ncsu.edu
  * Description: Authenticate NC State users using their WRAP credentials.
  * Author: OIT Outreach Technology
@@ -19,7 +19,7 @@ class NcstateWrapAuthentication
      * @var array
      */
     protected $_defaults = array(
-        'autoCreateUser' => true,
+        'autoCreateUser' => false,
     );
 
     /**
