@@ -57,7 +57,7 @@ class NcstateWrapAuthentication
             'options-general.php',
             __('NC State WRAP Auth', 'ncstate-wrap-authentication'),
             __('NC State WRAP Auth', 'ncstate-wrap-authentication'),
-            'read',
+            'edit_plugins',
             'ncstate-wrap-authentication',
             array($this, 'settingsPage')
         );
