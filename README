@@ -18,7 +18,7 @@ Installation Instructions
 
 1:  Download the latest release (not actual project code) from the github page
     located at:
-    http://github.com/ncsuwebdev/Plugin-Wordpress-WrapAuthenitcation
+    http://github.com/ncsuwebdev/Plugin-Wordpress-WrapAuthentication
     
 2:  Extract folder "ncstate-wrap-authentication" into your Wordpress plugin
     directory, typically located in /wp-content/plugins.  If your Wordpress
