@@ -19,7 +19,7 @@ class NcstateWrapAuthentication
      * @var array
      */
     protected $_defaults = array(
-        'autoCreateUser' => false,
+        'autoCreateUser' => false
     );
 
     /**
